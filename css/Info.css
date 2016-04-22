@@ -1,0 +1,46 @@
+.infoTussentitel {
+	margin-left: 35px;
+}
+.row {
+	width: 100%;
+	overflow:auto;
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+.rowBlockRight {
+	height: 100%;
+	float:right;
+	text-align: right;
+}
+.rowBlockLeft {
+	height: 100%;
+	float:left;
+
+}
+.rowBig {
+	width: 30%;
+}
+.rowSmall {
+	width: 15%;
+	text-align: center;
+	padding: 35px;
+}
+.infoTitleBold {
+	font-family: 'Work Sans', sans-serif;
+	font-size: 35px;
+	font-weight: 400;
+}
+.infoTitleLight {
+	font-family: 'Work Sans', sans-serif;
+	font-size: 35px;
+	font-weight: 200;
+}
+.infoPlainText {
+	line-height: 7px;
+}
+.infoPlainTextBold {
+	font-weight: 700;
+}
+.infoWhitespace {
+	height: 4px;
+}

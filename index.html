@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="img/MainFavicon.png" type="image/x-icon" />
+<title>Immalle Games</title>
+
+<link rel="stylesheet" href="css/indexMain.css"/>
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+<link rel="stylesheet" href="css/Sidenav.css"/>
+<link rel="stylesheet" href="css/Info.css"/>
+<link href="lib/lightbox2-master/src/css/lightbox.css" rel="stylesheet">
+
+
+<link href='https://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Work+Sans:100,200,400' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Roboto:100' rel='stylesheet' type='text/css'>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css" rel='stylesheet' type='text/css'>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/parallax.js/1.4.2/parallax.min.js"></script>
+<script src="lib/jquery.aniview.min.js"></script>
+<script type="text/javascript" src="lib/smoothscroll.js"></script>
+
+
+<body>
+
+	<div id="mySidenav" class="sidenav">
+	  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+	  <a href="#scrollHome" class="smoothScroll" onclick="closeNav()">Home</a>		
+	  <a href="#scrollGames" class="smoothScroll" onclick="closeNav()">Games</a>
+	  <a href="#scrollFotos" class="smoothScroll" onclick="closeNav()">Foto's</a>		
+	  <a href="#scrollInfo" class="smoothScroll" onclick="closeNav()">Info</a>			
+	</div>
+	
+	<span id="scrollHome" class="scroll scrollHome"></span>
+	<span id="scrollGames" class="scroll scrollGames"></span>
+	<span id="scrollFotos" class="scroll scrollFotos"></span>
+	<span id="scrollInfo" class="scroll scrollInfo"></span>
+	
+	<div id="menuButtonBackground" class="menuButtonBackgroundNo"></div>
+	<span id="menuButton" class="aniview" av-animation="fadeInLeft" style="font-size:17px;cursor:pointer" onclick="openNav()">☰ MENU</span>
+
+
+	<div id="background" class="parallax-window" data-parallax="scroll" data-image-src="img/triangle.svg">
+
+	  <div id="scrollDown"><span id="scrollDownSub">▼</span></div>
+
+	  <div id="immalleGamesMain">
+		  <span id="immalleGamesLight">IMMALLE</span><br>
+		  <span id="immalleGamesBold">GAMES</span>
+	  </div>
+
+
+	</div>
+
+	<div class="block">
+		<span class="tussentitel">Games</span>
+		<p class="alinea aniview" av-animation="fadeInUp">Hier vind je onze games, beide spelletjes zijn platformer games. Het eerste spel is gemaakt met Scratch en is gebaseerd op het spel “Pong”. Het tweede spel is gemaakt met de game engine Unity, deze game engine wordt bijvoorbeeld ook gebruikt voor Assassin’s Creed Identity, Crossy Road, Firewatch, Monument Valley en nog veel meer. Scratch is eerder een visuele programmeertaal in vergelijking met Unity, die C#(c-sharp) gebruikt. In het spel speel je als een pixelboy opzoek naar een uitweg, weg van de monsters die je willen doden.</p>
+		<ul class="aniview" av-animation="fadeInUp">
+		  <li><a href="GameScratch.html"target="_blank" class="alinea alineaLink"> Play Scratch game</a></li>
+		  <li><a href="GameUnity.html" target="_blank" class="alinea alineaLink"> Play Unity game</a></li>		
+		</ul>
+		
+		
+	</div>
+
+	<div class="block">
+		<span class="tussentitel">Foto's</span>
+		<p class="alinea aniview" av-animation="fadeInUp">Hier krijgt u een beeld van hoe wij aan de slag zijn gegaan om deze website en games te maken. <br>Druk op een miniatuur om de presentatie te starten.</p>
+		<div class="sfeerImgMiniatuurMain">
+			<a href="img/sfeerImg/sfeerDaan.jpg" data-lightbox="image"><img class="sfeerImgMiniatuurSubBoven" src="img/sfeerImg/sfeerDaan-vk.jpg"></img></a>
+			<a href="img/sfeerImg/sfeerJelle.jpg" data-lightbox="image"><img class="sfeerImgMiniatuurSubBoven" src="img/sfeerImg/sfeerJelle-vk.jpg"></img></a>
+			<a href="img/sfeerImg/sfeerJelle2.jpg" data-lightbox="image"><img class="sfeerImgMiniatuurSubBoven" src="img/sfeerImg/sfeerJelle2-vk.jpg"></img></a><br>
+			<a href="img/sfeerImg/sfeerJelle3.jpg" data-lightbox="image"><img class="sfeerImgMiniatuurSubOnder" src="img/sfeerImg/sfeerJelle3-vk.jpg"></img></a>
+			<a href="img/sfeerImg/sfeerWout.jpg" data-lightbox="image"><img class="sfeerImgMiniatuurSubOnder" src="img/sfeerImg/sfeerWout-vk.jpg"></img></a>
+			<a href="img/sfeerImg/sfeerWout2.jpg" data-lightbox="image"><img class="sfeerImgMiniatuurSubOnder" src="img/sfeerImg/sfeerWout2-vk.jpg"></img></a>
+		</div>
+	</div>
+
+	<span class="tussentitel infoTussentitel">Info</span>
+	<div class="parallax-window" data-parallax="scroll" data-image-src="img/triangle.svg">
+
+		<div class="row aniview" av-animation="fadeInUp">
+			<div class="rowBlockRight rowSmall">
+				<img src="img/InfoFoto's/daan-round.png"></img>
+
+			</div>
+			<div class="rowBlockRight rowBig">
+				<span class="infoTitleBold">DAAN </span><span class="infoTitleLight">DE VRY</span>
+				<p class="infoPlainText infoPlainTextBold">Website programming en design</p>
+				<p class="infoPlainText">Visuele website effecten/fotobewerking</p>
+				<div class="infoWhitespace"></div>
+				<p class="infoPlainText">16 jaar</p>
+				<p class="infoPlainText">Interesse voor javascript en HTML</p>
+				<p class="infoPlainText">daan.devry@immalle.be</p>
+			</div>
+		</div>
+
+		<div class="row aniview" av-animation="fadeInUp">
+			<div class="rowBlockLeft rowSmall">			
+				<img src="img/InfoFoto's/jelle-round.png"></img>
+			</div>
+			<div class="rowBlockLeft rowBig">
+				<span class="infoTitleBold">JELLE </span><span class="infoTitleLight">SWAELEN</span>
+				<p class="infoPlainText infoPlainTextBold">Research en programming</p>
+				<p class="infoPlainText">Fotobewerking</p>
+				<div class="infoWhitespace"></div>
+				<p class="infoPlainText">17 jaar</p>
+				<p class="infoPlainText">Werkt graag in C#, HTML</p>
+				<p class="infoPlainText">jelle.swaelen@immalle.be</p>
+			</div>
+		</div>
+
+		<div class="row aniview" av-animation="fadeInUp">
+			<div class="rowBlockRight rowSmall">
+				<img src="img/InfoFoto's/wout-round.png"></img>
+			</div>
+			<div class="rowBlockRight rowBig">
+				<span class="infoTitleBold">WOUT </span><span class="infoTitleLight">PEETERS</span>
+				<p class="infoPlainText infoPlainTextBold">Game engineer en programming</p>
+				<p class="infoPlainText">Scratch en Unity games</p>
+				<div class="infoWhitespace"></div>
+				<p class="infoPlainText">17 jaar</p>
+				<p class="infoPlainText">Interesse in scratch, game development</p>
+				<p class="infoPlainText">wout.peeters@immalle.be</p>
+			</div>
+		</div>
+
+	</div>
+
+	<div class="footer">
+		<span class="footerText">Made with &#9825; <br> &#169; COPYRIGHT 2016</span>
+	</div>
+
+
+
+<script>
+
+	  //sidenav
+	  function openNav() {
+		  document.getElementById("mySidenav").style.width = "250px";
+	  }
+
+	  function closeNav() {
+		  document.getElementById("mySidenav").style.width = "0";
+	  }
+</script>
+
+
+<script>
+	//detect scroll voor header
+	window.addEventListener('scroll', stickyScroll, false);
+	var menuButtonBackground = document.getElementById("menuButtonBackground");
+	var menuButton = document.getElementById("menuButton")
+	function stickyScroll(e) {
+
+	  if( window.pageYOffset < 100) {
+			menuButtonBackground.className = "menuButtonBackgroundNo";
+			menuButton.className= "menuButtonWhite";
+	  }
+	   if( window.pageYOffset > 100) {
+			menuButtonBackground.className = "menuButtonBackgroundYes";
+			menuButton.className= "menuButtonBlack";
+	  }
+	}
+</script>
+
+<script src="lib/lightbox2-master/src/js/lightbox.js"></script>
+<script>
+//aniview
+$('.aniview').AniView();
+</script>
+
+</body>
+</html> 

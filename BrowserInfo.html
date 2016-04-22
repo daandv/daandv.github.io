@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="shortcut icon" href="https://cdn2.iconfinder.com/data/icons/app-types-in-grey/128/info_512pxGREY.png" type="image/x-icon" />
+<script type="text/javascript" src="http://l2.io/ip.js?var=myip"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script>
+<script src="lib/moment-with-locales.js"></script>
+	<title>Browser info - Immalle Games</title>
+</head>
+<style>
+body {
+	font-family: courier;
+}
+.dataDivEen {
+	display: inline-block;
+	margin-left: 270px;
+}
+.dataDivTwee {
+	display: inline-block;
+	margin-left: 99px;
+}
+.titlesDiv {
+	display: inline-block;
+	margin-left: 10px;
+}
+.subTitle {
+	font-family: verdana;
+	font-weight: 700;
+	line-height: 50px;
+	margin-left: 10px;
+}
+#localTimeMain {
+	font-size: 13px;
+	position: fixed;
+	width: 100%;
+	text-align: right;
+}
+#localTimeSub {
+	margin-right: 17px;
+}
+#immalleGamesMain {
+	position: fixed;
+	width: 100%;
+	text-align: center;
+	font-size: 13px;
+	bottom: 0;
+	margin-bottom: 15px;
+}
+#immalleGamesSub {
+	border-top: 1px solid;
+	padding: 10px;
+	padding-left: 25px;
+	padding-right: 25px;
+	color: black;
+}
+
+#immalleGamesSub:hover {
+	cursor: pointer;
+}
+a {
+	text-decoration: none;
+}
+</style>
+<body>
+<div id="localTimeMain">
+	<b>local time: </b><span id="localTimeSub">qsdf</span>
+</div>
+
+<span class="subTitle">About your IP Adress</span><br>
+
+<div class="titlesDiv">
+	<span>IP Adress: </span><br>
+	<span>Country: </span><br>
+	<span>Region: </span><br>
+	<span>Provider: </span><br>
+</div>
+<div class="dataDivEen">
+	<span id="ipOpScherm"></span><br>
+	<img src="http://vignette1.wikia.nocookie.net/geofictie/images/3/39/World.png/revision/latest?cb=20080723113936" height="15px" width="15px" style="vertical-align:middle;"></img><span id="countryOpScherm"></span><br>
+	<span id="regionOpScherm"></span><br>
+	<span id="providerOpScherm"></span><br>
+</div>
+
+
+<br>
+	
+
+<span class="subTitle">About your browser</span><br>
+
+<div class="titlesDiv">
+	<span>Browser: </span><br>
+	<span>Browser version:</span><br>
+	<span>Platform:</span><br>
+	<span>Screen resolution:</span><br>
+	<span>Browser available resolution:</span><br>
+	<span>Internet speed:</span><br>
+</div>
+
+<div class="dataDivTwee">
+	<span id="browserOpScherm"></span><br>
+	<span id="browserVersionOpScherm"></span><br>
+	<span id="platformOpScherm"></span><br>
+	<span id="resolutionOpScherm"></span><br>
+	<span id="availResolutionOpScherm"></span><br>
+	<img id="internetSpeedOpSchermImg" src="img/loader.gif" height="15.13px" width="22px" style="vertical-align: middle;"> </img><span id="progress" id="internetSpeedOpScherm"></span>
+</div>
+
+<div id="immalleGamesMain">
+	<a href="index.html"><b id="immalleGamesSub">Immalle Games</b></a>
+</div>
+
+
+<script>
+//acties	
+
+</script>
+
+<script>
+	//browser en browservertie
+	function get_browser(){
+		var ua=navigator.userAgent,tem,M=ua.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || []; 
+		if(/trident/i.test(M[1])){
+			tem=/\brv[ :]+(\d+)/g.exec(ua) || []; 
+			return {name:'IE',version:(tem[1]||'')};
+			}   
+		if(M[1]==='Chrome'){
+			tem=ua.match(/\bOPR\/(\d+)/)
+			if(tem!=null)   {return {name:'Opera', version:tem[1]};}
+			}   
+		M=M[2]? [M[1], M[2]]: [navigator.appName, navigator.appVersion, '-?'];
+		if((tem=ua.match(/version\/(\d+)/i))!=null) {M.splice(1,1,tem[1]);}
+		return {
+		  name: M[0],
+		  version: M[1]
+		};
+	 }
+
+	var browser=get_browser();
+	var browserName = document.getElementById("browserOpScherm");
+	var browserVersion = document.getElementById("browserVersionOpScherm");
+	browserName.innerHTML = browser.name;
+	browserVersion.innerHTML = browser.version;
+</script>
+
+
+<script>
+	//ip adress 
+	var ip = document.getElementById("ipOpScherm");
+	ip.innerHTML = myip;
+
+	//ip adress locatie
+	$.getJSON('http://ipinfo.io', function(data){
+	  var countryName = document.getElementById("countryOpScherm");
+	  countryName.innerHTML = data.country;
+
+	  var regionName = document.getElementById("regionOpScherm");
+	  regionName.innerHTML = data.region;
+
+	  var providerName = document.getElementById("providerOpScherm");
+	  providerName.innerHTML = data.org;
+	})
+</script>
+
+<script>
+	//scherm resoluties
+	var schermresolutie = document.getElementById("resolutionOpScherm");
+	var availresolutie = document.getElementById("availResolutionOpScherm");
+	schermresolutie.innerHTML = window.screen.height + " × " + window.screen.width;
+	availresolutie.innerHTML = window.screen.availHeight +  " × " + window.screen.availWidth;
+</script>
+
+<script>
+	//local time
+	var localTime = document.getElementById("localTimeSub");
+	setInterval(getTime, 1);
+	function getTime() {
+		localTime.innerHTML = moment().format('MMMM Do YYYY, h:mm:ss a')
+	}
+</script>
+
+<script>
+	//platform
+	var OSName = "Unknown";
+	if (window.navigator.userAgent.indexOf("Windows NT 6.2") != -1) OSName="Windows 8";
+	if (window.navigator.userAgent.indexOf("Windows NT 6.1") != -1) OSName="Windows 7";
+	if (window.navigator.userAgent.indexOf("Windows NT 6.0") != -1) OSName="Windows Vista";
+	if (window.navigator.userAgent.indexOf("Windows NT 5.1") != -1) OSName="Windows XP";
+	if (window.navigator.userAgent.indexOf("Windows NT 5.0") != -1) OSName="Windows 2000";
+	if (window.navigator.userAgent.indexOf("Mac")!=-1) OSName="Mac/iOS";
+	if (window.navigator.userAgent.indexOf("X11")!=-1) OSName="UNIX";
+	if (window.navigator.userAgent.indexOf("Linux")!=-1) OSName="Linux";
+	
+	var platform = document.getElementById("platformOpScherm");
+	platform.innerHTML = OSName;
+</script>
+
+<script>
+	//internet speed
+	//JUST AN EXAMPLE, PLEASE USE YOUR OWN PICTURE!
+	var imageAddr = "http://www.kenrockwell.com/contax/images/g2/examples/31120037-5mb.jpg"; 
+	var downloadSize = 4995374; //bytes
+
+	function ShowProgressMessage(msg) {
+		if (console) {
+			if (typeof msg == "string") {
+				console.log(msg);
+			} else {
+				for (var i = 0; i < msg.length; i++) {
+					console.log(msg[i]);
+				}
+			}
+		}
+		
+		var oProgress = document.getElementById("progress");
+		if (oProgress) {
+			var actualHTML = (typeof msg == "string") ? msg : msg.join("<br />");
+			oProgress.innerHTML = actualHTML;
+		}
+	}
+
+	function InitiateSpeedDetection() {
+		window.setTimeout(MeasureConnectionSpeed, 1);
+	};    
+
+	if (window.addEventListener) {
+		window.addEventListener('load', InitiateSpeedDetection, false);
+	} else if (window.attachEvent) {
+		window.attachEvent('onload', InitiateSpeedDetection);
+	}
+
+	function MeasureConnectionSpeed() {
+		var startTime, endTime;
+		var download = new Image();
+		download.onload = function () {
+			endTime = (new Date()).getTime();
+			showResults();
+		}
+		
+		download.onerror = function (err, msg) {
+			ShowProgressMessage("Invalid image, or error downloading");
+		}
+		
+		startTime = (new Date()).getTime();
+		var cacheBuster = "?nnn=" + startTime;
+		download.src = imageAddr + cacheBuster;
+		
+		function showResults() {
+			var duration = (endTime - startTime) / 1000;
+			var bitsLoaded = downloadSize * 8;
+			var speedBps = (bitsLoaded / duration).toFixed(2);
+			var speedKbps = (speedBps / 1024).toFixed(2);
+			var speedMbps = (speedKbps / 1024).toFixed(2);
+			$("#internetSpeedOpSchermImg").remove();
+			ShowProgressMessage([
+				speedMbps + " Mbps"
+			]);
+		}
+	}
+</script>
+</body>
+</html>
