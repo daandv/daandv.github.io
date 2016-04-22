@@ -85,7 +85,7 @@ div.broken {
 }
 div#unityPlayer * {
     cursor: default;
-    height: 468.7px !important;
+    height: 468.7px;
     width: 750px;
     border: 1px solid #fff;
 }
